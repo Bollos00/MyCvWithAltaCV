@@ -14,7 +14,7 @@
 %% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\documentclass[11pt,a4paper,ragged2e,withhyper]{altacv}
 %% AltaCV uses the fontawesome5 and packages.
 %% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
 
@@ -42,15 +42,14 @@
 % Change the colours if you want to
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
-\definecolor{DarkPastelRed}{HTML}{450808}
-\definecolor{PastelRed}{HTML}{8F0D0D}
-\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{DarkBlue}{HTML}{000044}
+\definecolor{Blue}{HTML}{0000AA}
 \colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
+\colorlet{tagline}{Blue}
+\colorlet{heading}{DarkBlue}
+\colorlet{headingrule}{black}
+\colorlet{subheading}{Blue}
+\colorlet{accent}{Blue}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
@@ -76,27 +75,29 @@
 %% for your publication list
 \input{pubs-num.cfg}
 
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
+\addbibresource{cv.bib}
 
 \begin{document}
-\name{Your Name Here}
-\tagline{Your Position or Tagline Here}
+\name{Bruno Bollos Correa}
+\tagline{Engenheiro Eletricista}
 %% You can add multiple photos on the left or right
-\photoR{2.8cm}{Globe_High}
+\photoR{2.8cm}{foto_linkedin.jpg}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
 
 \personalinfo{%
   % Not all of these are required!
-  \email{your_name@email.com}
-  \phone{000-00-0000}
-  \mailaddress{Åddrésş, Street, 00000 Cóuntry}
-  \location{Location, COUNTRY}
-  \homepage{www.homepage.com}
-  \twitter{@twitterhandle}
-  \linkedin{your_id}
-  \github{your_id}
-  \orcid{0000-0000-0000-0000}
+  \email{bollos@outlook.com}
+  % \phone{000-00-0000}
+  % \mailaddress{Åddrésş, Street, 00000 Cóuntry}
+  \location{São Paulo-SP, Brasil}
+  % \homepage{www.homepage.com}
+  % \twitter{@twitterhandle}
+  \linkedin{bruno-bollos-correa-32b224260}
+  \github{Bollos00}
+  \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  \gitlab{Bollos00}
+
+  % \orcid{0000-0000-0000-0000}
   %% You can add your own arbitrary detail with
   %% \printinfo{symbol}{detail}[optional hyperlink prefix]
   % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
@@ -122,158 +123,90 @@
 % \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\columnratio{0.5}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
-\cvsection{Experience}
+\cvsection{Experiência}
 
-\cvevent{Job Title 1}{Company 1}{Month 20XX -- Ongoing}{Location}
+\cvevent{Desenvolvedor de Software}{Equipe de Robótica da FEI (RoboFEI)}{Abril/2019 -- Novembro/2022}{}
 \begin{itemize}
-\item Job description 1
-\item Job description 2
+\item Habilidades: Desenvolvimento de software, C++, Qt, Git, robótica, trabalho em equipe.
+\item \href{https://gitlab.com/robofei/ssl}{Repositórios de código aberto no GitLab}
+\item Participação em 5 competições, sendo 3 nacionais e 2 internacionais.
+\end{itemize}
+
+\cvsection{Projetos}
+
+\cvevent{Trabalho de Iniciação Científica}{Centro Universitário da FEI/RoboFEI}{Agosto/2021 -- Julho/2022}{}
+\begin{itemize}
+\item Análise de técnicas de aprendizado supervisionado aplicadas na avaliação de sucesso de ações no futebol de robôs.
+\item Orientação de Prof. Dr. Flavio Tonidandel.
+\item Habilidades: Pesquisa, C++, Qt, Python, Aprendizado de Máquina, scikit-learn.
 \end{itemize}
 
 \divider
 
-\cvevent{Job Title 2}{Company 2}{Month 20XX -- Ongoing}{Location}
+\cvevent{Trabalho de Conclusão de Curso}{Centro Universitário da FEI e Companhia do Metrô de São Paulo}{Fevereiro/2022 -- Dezembro/2022}{}
 \begin{itemize}
-\item Job description 1
-\item Job description 2
+  \item Planejador de rotas com navegação indoor no sistema metroferroviário de São Paulo.
+  \item Orientação de Prof. Dr. Marco Antonio Assis de Melo e Eng. Felipe Copche.
+  \item Habilidades: Pesquisa, Python, FastAPI, SQL, Neo4j, Docker, Java, Android, Bluetooth, embarcados (ESP32).
 \end{itemize}
-
-\cvsection{Projects}
-
-\cvevent{Project 1}{Funding agency/institution}{}{}
-\begin{itemize}
-\item Details
-\end{itemize}
-
-\divider
-
-\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
-A short abstract would also work.
-
+  
 \medskip
 
-\cvsection{A Day of My Life}
-
-% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% \wheelchart{outer radius}{inner radius}{
-% comma-separated list of value/text width/color/detail}
-\wheelchart{1.5cm}{0.5cm}{%
-  6/8em/accent!30/{Sleep,\\beautiful sleep},
-  3/8em/accent!40/Hopeful novelist by night,
-  8/8em/accent!60/Daytime job,
-  2/10em/accent/Sports and relaxation,
-  5/6em/accent!20/Spending time with family
-}
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-\newpage
-
-\cvsection{Publications}
+\cvsection{Publicações}
 
 %% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
 %% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
 %% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
-\mynames{Lim/Lian\bibnamedelima Tze,
-  Wong/Lian\bibnamedelima Tze,
-  Lim/Tracy,
-  Lim/L.\bibnamedelimi T.}
+% \mynames{Lim/Lian\bibnamedelima Tze,
+%   Wong/Lian\bibnamedelima Tze,
+%   Lim/Tracy,
+%   Lim/L.\bibnamedelimi T.}
 %% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
 
 \nocite{*}
+% \printbibliography
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
 
-\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+% \divider
 
-\divider
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Artigos Acadêmicos}},type=article]
 
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+% \divider
 
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+% \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
 
 %% Switch to the right column. This will now automatically move to the second
 %% page if the content is too long.
 \switchcolumn
 
-\cvsection{My Life Philosophy}
+\cvsection{Habilidades}
 
-\begin{quote}
-``Something smart or heartfelt, preferably in one sentence.''
-\end{quote}
+\cvsection{Idiomas}
 
-\cvsection{Most Proud of}
-
-\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
-
+\cvskill{Português}{5}
 \divider
 
-\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
-
+\cvskill{Inglês}{4}
 \divider
 
-\cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+\cvskill{Espanhol}{3}
 
-\cvsection{Strengths}
-
-\cvtag{Hard-working}
-\cvtag{Eye for detail}\\
-\cvtag{Motivator \& Leader}
-
-\divider\smallskip
-
-\cvtag{C++}
-\cvtag{Embedded Systems}\\
-\cvtag{Statistical Analysis}
-
-\cvsection{Languages}
-
-\cvskill{English}{5}
-\divider
-
-\cvskill{Spanish}{4}
-\divider
-
-\cvskill{German}{3.5} %% Supports X.5 values.
-
-%% Yeah I didn't spend too much time making all the
-%% spacing consistent... sorry. Use \smallskip, \medskip,
-%% \bigskip, \vspace etc to make adjustments.
 \medskip
 
-\cvsection{Education}
+\cvsection{Educação}
 
-\cvevent{Ph.D.\ in Your Discipline}{Your University}{Sept 2002 -- June 2006}{}
-Thesis title: Wonderful Research
+\cvevent{Graduação em Engenharia Elétrica com ênfase em Telecomunicações}{Centro Universitário da FEI}{2018--2022}{}
 
-\divider
-
-\cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
-
-\divider
-
-\cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
-
-% \divider
-
-\cvsection{Referees}
+\cvsection{Referências}
 
 % \cvref{name}{email}{mailing address}
-\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-{Address Line 1\\Address line 2}
-
-\divider
-
-\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-{Address Line 1\\Address line 2}
-
+\cvref{Prof. Dr. Marco Antonio Assis de Melo}{Centro Universitário da FEI}{mant@fei.edu.br}{}
 
 \end{paracol}
-
 
 \end{document}
