@@ -1,0 +1,229 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.6.5, 3 Nov 2022) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[11pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkBlue}{HTML}{000044}
+\definecolor{Blue}{HTML}{0000AA}
+\colorlet{name}{black}
+\colorlet{tagline}{Blue}
+\colorlet{heading}{DarkBlue}
+\colorlet{headingrule}{black}
+\colorlet{subheading}{Blue}
+\colorlet{accent}{Blue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.cfg}
+
+\addbibresource{cv.bib}
+
+\begin{document}
+\name{Bruno Bollos Correa}
+\tagline{Electrical Engineer | Telecommunications | Software}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{foto_linkedin.jpg}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{bollos@outlook.com}
+  % \phone{000-00-0000}
+  % \mailaddress{Åddrésş, Street, 00000 Cóuntry}
+  \location{São Paulo-SP, Brazil}
+  % \homepage{www.homepage.com}
+  % \twitter{@twitterhandle}
+  \linkedin{bollos00}
+  \github{Bollos00}
+  \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  \gitlab{Bollos00}
+
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.5}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Software Developer}{FEI Robotics Team (RoboFEI)}{April/2019 -- November/2022}{}
+\begin{itemize}
+\item Skills: Software development, C++, Qt, Git, robotics, teamwork.
+\item \href{https://gitlab.com/robofei/ssl}{Open source repositories on GitLab}
+\item Participation in 5 competitions, 3 national (Brazil) and 2 international.
+\end{itemize}
+
+\cvsection{Projects}
+
+\cvevent{Scientific Research}{The University Center of FEI/RoboFEI}{August/2021 -- July/2022}{}
+\begin{itemize}
+\item Analysis of supervised learning techniques applied in the evaluation of success of actions in robot football.
+\item Oriented by Prof. Dr. Flavio Tonidandel.
+\item Skills: Research, C++, Qt, Python, Machine Learning, scikit-learn.
+\end{itemize}
+
+\divider
+
+\cvevent{End-of-graduation Work}{The University Center of FEI and Companhia do Metrô de São Paulo}{February/2022 -- December/2022}{}
+\begin{itemize}
+  \item Route planner with indoor navigation in the Metro of São Paulo.
+  \item Oriented by Prof. Dr. Marco Antonio Assis de Melo and Eng. Felipe Copche.
+  \item Skills: Research, Python, FastAPI, PostgreSQL, Neo4j, Docker, Java, Android, Bluetooth, embedded (ESP32).
+\end{itemize}
+  
+\medskip
+
+\cvsection{Publications}
+
+%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+% \mynames{Lim/Lian\bibnamedelima Tze,
+%   Wong/Lian\bibnamedelima Tze,
+%   Lim/Tracy,
+%   Lim/L.\bibnamedelimi T.}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+\nocite{*}
+% \printbibliography
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Artigos Acadêmicos}},type=article]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Skills}
+
+\begin{itemize}
+  \item Robotics
+  \item Software
+  \item Embedded
+  \item Research
+\end{itemize}
+
+\divider
+
+Knowledge and experience in software technologies:
+\begin{description}
+  \item[C++, Qt, Git] 4 years
+  \item[Python] 3 years
+  \item[Docker] 2 years
+  \item[FastAPI, Neo4j, Java, Android] 6 months
+\end{description}
+
+\cvsection{Languages}
+
+\cvskill{Portuguese}{5}
+\divider
+
+\cvskill{English}{4}
+\divider
+
+\cvskill{Spanish}{3}
+
+\medskip
+
+\cvsection{Education}
+
+\cvevent{Degree in Electrical Engineering with emphasis in Telecommunications}{The University Center of FEI}{2018--2022}{}
+
+\cvsection{References}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Prof. Dr. Marco Antonio Assis de Melo}{The University Center of FEI}{mant@fei.edu.br}{}
+
+\end{paracol}
+
+\end{document}
